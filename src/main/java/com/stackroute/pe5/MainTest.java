@@ -5,24 +5,30 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainTest {
-    public List<Student> studentInfo() {
-        Student obj1 = new Student(1, "Yaksha", 23);
-        Student obj2 = new Student(2, "Varshini", 25);
-        Student obj3 = new Student(3, "Srilu", 27);
-        Student obj4 = new Student(4, "Yaksha", 23);
-        Student obj5 = new Student(5, "Pravalika", 24);
-        List<Student> list = new ArrayList<Student>();
-        list.add(obj1);
-        list.add(obj2);
-        list.add(obj3);
-        list.add(obj4);
-        list.add(obj5);
+    public static ArrayList<Student> compareStudent(List<Student> students){
 
-        Collections.sort(list, new StudentSort());
+        ArrayList<Student> student = new ArrayList<Student>(students); //initialized list
+        Collections.sort(student, new StudentSort());
 
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).getId() + " " + list.get(i).getName() + " " + list.get(i).getAge());
+        return student;
+    }
+
+    public static void main(String args[]){
+
+        ArrayList<Student> listStudent = new ArrayList<Student>(); //adding elements to the list
+
+        listStudent.add(new Student(1,"pranathi", 12));
+        listStudent.add(new Student(2,"yaksha", 13));
+        listStudent.add(new Student(3,"srilu", 14));
+        listStudent.add(new Student(4,"varshini", 15));
+        listStudent.add(new Student(5,"pravalika", 16));
+
+        Collections.sort(listStudent, new StudentSort());
+
+        for(int i=0;i<listStudent.size();i++){
+            System.out.println(listStudent.get(i).toString());
         }
-        return list;
+
+
     }
 }

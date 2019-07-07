@@ -11,11 +11,13 @@ f. For students having same name and age, sort them according to their ID.
  */
 package com.stackroute.pe5;
 
-public class Student
-{
-    //initialized fields and generated getter and setter methods
-    private int id, age;
+
+public class Student {
+    //intialized variables and getters & setters methods
+
+    private int id;
     private String name;
+    private int age;
 
     public int getId() {
         return id;
@@ -23,14 +25,6 @@ public class Student
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getName() {
@@ -41,10 +35,26 @@ public class Student
         this.name = name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public Student(int id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
